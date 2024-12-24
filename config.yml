@@ -1,0 +1,39 @@
+# NLU Pipeline Configuration
+language: en
+pipeline:
+# Text preprocessing and tokenization
+- name: WhitespaceTokenizer  # Splits text into tokens based on whitespace
+
+# Feature extractors
+- name: RegexFeaturizer      # Extracts features using regex patterns
+- name: LexicalSyntacticFeaturizer  # Extracts lexical and syntactic features
+- name: CountVectorsFeaturizer      # Converts text to bag-of-words features
+- name: CountVectorsFeaturizer      # Character n-gram feature extractor
+  analyzer: "char_wb"               # Word boundary-aware character analyzer
+  min_ngram: 1                      # Minimum n-gram size
+  max_ngram: 4                      # Maximum n-gram size
+
+# Intent and Entity Classification
+- name: DIETClassifier              # Dual Intent and Entity Transformer
+  epochs: 100                       # Number of training iterations
+
+# Post-processing
+- name: EntitySynonymMapper         # Maps entity synonyms to canonical values
+- name: ResponseSelector            # Selects appropriate responses
+  epochs: 100
+- name: FallbackClassifier         # Handles low-confidence predictions
+  threshold: 0.7                   # Minimum confidence threshold
+
+# Dialogue Management Policies
+policies:
+- name: MemoizationPolicy          # Remembers and repeats seen conversations
+- name: RulePolicy                 # Handles rule-based conversations
+- name: UnexpecTEDIntentPolicy     # Handles unexpected user inputs
+  max_history: 5                   # Number of past turns to consider
+  epochs: 100
+- name: TEDPolicy                  # Transformer for dialogue management
+  max_history: 5
+  epochs: 100
+  constrain_similarities: true     # Ensures prediction similarities are constrained
+
+assistant_id: 20241210-095730-deafening-cotija  # Unique identifier for this assistant
