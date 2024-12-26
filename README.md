@@ -66,6 +66,7 @@ Bot: "🎉 Welcome to Web Development for Beginners! "
 This project is licensed under te MIT License- see the LICENSE.md file for details
 
 📞Contact
+
 Vindhya HK- https://www.linkedin.com/in/vindhyahk
 
 Project link: https://github.com/vindhyahk/Chatbot_for_Personalized_Learning
