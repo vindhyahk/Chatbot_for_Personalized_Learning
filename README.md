@@ -18,12 +18,13 @@ pip
 Installation:
 1. Clone the repository
    git clone https://github.com/vindhyahk/Chatbot_for_Personalized_Learning
+   
    cd learning-assistant-chatbot
 
-2. Install required packages
+3. Install required packages
    pip install -r requirements.txt
 
-3. Run the application
+4. Run the application
    streamlit run app.py
 
 💻Usage
@@ -40,8 +41,11 @@ Installation:
 - State management: Streamlit Session State
 
 ✍️Example interaction
+
 User: " I'm a beginner interested in web development "
+
 Bot: "🎉 Welcome to Web Development for Beginners! "
+
 [Displays course materials and learning path]
 
 
@@ -63,6 +67,7 @@ This project is licensed under te MIT License- see the LICENSE.md file for detai
 
 📞Contact
 Vindhya HK- https://www.linkedin.com/in/vindhyahk
+
 Project link: https://github.com/vindhyahk/Chatbot_for_Personalized_Learning
 
 ---
