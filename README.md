@@ -63,7 +63,7 @@ Bot: "🎉 Welcome to Web Development for Beginners! "
 5. Open a pull request
 
 📝License
-This project is licensed under te MIT License- see the LICENSE.md file for details
+See the LICENSE.md file for details
 
 📞Contact
 
